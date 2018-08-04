@@ -36,12 +36,14 @@ class ApplicationController < Sinatra::Base
   post '/account/withdraw' do
     @user = User.find(session[:user_id])
     @user.balance -= params[:withdraw].to_i
+    @user.save
     erb :account
   end
 
   post '/account/deposit' do
     @user = User.find(session[:user_id])
     @user.balance += params[:deposit].to_i
+    @user.save
     erb :account
   end
 
