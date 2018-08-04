@@ -3,7 +3,13 @@
 <h2>Balance: <%= @user.balance %></h2>
 
 <form action="/account" method="post">
-  <p>Deposit: <input type="float" name="" value=""></p>
+  <p>Deposit: <input type="float" name="deposit" value=""></p>
+  <input type="submit" value="Deposit">
+</form>
+
+<form action="/account" method="post">
+  <p>Withdraw: <input type="float" name="withdraw" value=""></p>
+  <input type="submit" value="Withdraw">
 </form>
 
 <p><a href="/logout">Log Out</a></p>
