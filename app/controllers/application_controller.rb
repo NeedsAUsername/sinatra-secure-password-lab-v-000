@@ -36,13 +36,13 @@ class ApplicationController < Sinatra::Base
   post '/account/withdraw' do
     @user = User.find(session[:user_id])
     @user.balance -= params[:withdraw].to_i
-    redirect '/account'
+    erb :account
   end
 
   post '/account/deposit' do
     @user = User.find(session[:user_id])
     @user.balance += params[:deposit].to_i
-    redirect '/account'
+    erb :account
   end
 
   get "/login" do
